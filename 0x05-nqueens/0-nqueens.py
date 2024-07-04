@@ -32,7 +32,7 @@ def is_safe(board: List[List[int]], row: int, col: int) -> bool:
 
 
 def solve_n_queens(
-        board: List[List[int]], col: int, solutions: List[List[int]]) -> None:
+    board: List[List[int]], col: int, solutions: List[List[int]]) -> None:
     """
     Solve N Queens problem using Backtracking.
     """
