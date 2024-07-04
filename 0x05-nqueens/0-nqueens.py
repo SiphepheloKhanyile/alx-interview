@@ -5,14 +5,19 @@ on an `N x N` chessboard.
 """
 import sys
 
-#  possible solutions to the N queens problem.
+
 solutions = []
-
-#  The size of the chessboard.
+"""
+The list of possible solutions to the N queens problem.
+"""
 n = 0
-
-#  The list of possible positions on the chessboard.
+"""
+The size of the chessboard.
+"""
 pos = None
+"""
+The list of possible positions on the chessboard.
+"""
 
 
 def get_input():
