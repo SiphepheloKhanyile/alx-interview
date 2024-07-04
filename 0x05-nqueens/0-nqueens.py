@@ -4,9 +4,10 @@ The N queens puzzle is the challenge of placing N non-attacking queens on an
 N×N chessboard. Write a program that solves the N queens problem.
 """
 import sys
+from typing import List, Tuple
 
 
-def is_safe(board, row, col):
+def is_safe(board: List[List[int]], row: int, col: int) -> bool:
     """
     Check if a queen can be placed at board[row][col].
     This function checks if a queen can be placed at board[row][col]
@@ -30,7 +31,8 @@ def is_safe(board, row, col):
     return True
 
 
-def solve_n_queens(board, col, solutions):
+def solve_n_queens(
+        board: List[List[int]], col: int, solutions: List[List[int]]) -> None:
     """
     Solve N Queens problem using Backtracking.
     """
@@ -40,7 +42,7 @@ def solve_n_queens(board, col, solutions):
     if col >= N:
         solutions.append([list(map(list, zip(*board)))[i].index(1)
                          for i in range(N)])
-        return True
+        return
 
     # Consider this column and try placing queen in all rows one by one
     for i in range(N):
@@ -51,14 +53,11 @@ def solve_n_queens(board, col, solutions):
             # Recur to place rest of the queens
             solve_n_queens(board, col + 1, solutions)
 
-            # If placing queen in board[i][col] doesn't lead to a solution,
-            # then remove queen from board[i][col]
+            # If placing queen in board[i][col] doesn't lead to a solution, then remove queen from board[i][col]
             board[i][col] = 0
 
-    return False
 
-
-def n_queens(N):
+def n_queens(N: int) -> None:
     """
     Main function to solve N Queens problem.
     """
