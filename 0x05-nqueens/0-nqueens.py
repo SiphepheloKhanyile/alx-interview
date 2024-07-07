@@ -53,7 +53,8 @@ def solve_n_queens(
             # Recur to place rest of the queens
             solve_n_queens(board, col + 1, solutions)
 
-            # If placing queen in board[i][col] doesn't lead to a solution, then remove queen from board[i][col]
+            # If placing queen in board[i][col] doesn't lead to a solution,
+            # then remove queen from board[i][col]
             board[i][col] = 0
 
 
